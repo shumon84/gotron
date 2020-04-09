@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	"github.com/Equanox/gotron"
+	"github.com/shumon84/gotron"
 )
 
 func main() {

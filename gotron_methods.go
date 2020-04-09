@@ -13,7 +13,7 @@ import (
 	"runtime"
 	"strconv"
 
-	"github.com/Equanox/gotron/internal/file"
+	"github.com/shumon84/gotron/internal/file"
 	"github.com/pkg/errors"
 
 	"github.com/otiai10/copy"

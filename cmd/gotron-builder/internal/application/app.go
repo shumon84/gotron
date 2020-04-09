@@ -9,13 +9,13 @@ import (
 	"path/filepath"
 	"runtime"
 
-	"github.com/Equanox/gotron/internal/file"
+	"github.com/shumon84/gotron/internal/file"
 	"github.com/otiai10/copy"
 
 	"github.com/Benchkram/errz"
 	shutil "github.com/termie/go-shutil"
 
-	"github.com/Equanox/gotron"
+	"github.com/shumon84/gotron"
 )
 
 // Globals constants

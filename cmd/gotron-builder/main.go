@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/Benchkram/errz"
-	"github.com/Equanox/gotron/cmd/gotron-builder/internal/application"
+	"github.com/shumon84/gotron/cmd/gotron-builder/internal/application"
 	"os"
 	"path/filepath"
 	"strconv"

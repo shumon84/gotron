@@ -6,7 +6,7 @@ package gotron
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/Equanox/gotron/internal/runner"
+	"github.com/shumon84/gotron/internal/runner"
 	"net/http"
 	"sync"
 
