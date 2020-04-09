@@ -93,6 +93,10 @@ type windowMessageStruct struct {
 	Message int
 }
 
+type setIgnoreMouseEventStruct struct {
+	Ignore bool
+}
+
 //OpenDevTools open the devtools view in this BrowserWindow
 func (gbw *BrowserWindow) OpenDevTools() {
 	res, err := gbw.sendAndReceiveSocketEvent(SocketEvent{Event: "devTools", Data: ""})
@@ -1004,7 +1008,9 @@ func (gbw *BrowserWindow) IsVisibleOnAllWorkspaces() bool {
 //
 // All mouse events happened in this window will be passed to the window below this window, but if this window has focus, it will still receive keyboard events.
 func (gbw *BrowserWindow) SetIgnoreMouseEvents(ignore bool, options ...interface{}) {
-	panic("Not implemented")
+	res, _ := gbw.sendAndReceiveSocketEvent(SocketEvent{Event: "setAspectRatio", Data: setIgnoreMouseEventStruct{Ignore:ignore}})
+	logger.Debug().Msgf("%+v\n", res)
+	//panic("Not implemented")
 }
 
 //SetContentProtection - Prevents the window contents from being captured by other apps.
