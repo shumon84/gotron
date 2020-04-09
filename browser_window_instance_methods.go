@@ -1008,7 +1008,7 @@ func (gbw *BrowserWindow) IsVisibleOnAllWorkspaces() bool {
 //
 // All mouse events happened in this window will be passed to the window below this window, but if this window has focus, it will still receive keyboard events.
 func (gbw *BrowserWindow) SetIgnoreMouseEvents(ignore bool, options ...interface{}) {
-	res, _ := gbw.sendAndReceiveSocketEvent(SocketEvent{Event: "setAspectRatio", Data: setIgnoreMouseEventStruct{Ignore:ignore}})
+	res, _ := gbw.sendAndReceiveSocketEvent(SocketEvent{Event: "setIgnoreMouseEvents", Data: setIgnoreMouseEventStruct{Ignore:ignore}})
 	logger.Debug().Msgf("%+v\n", res)
 	//panic("Not implemented")
 }
