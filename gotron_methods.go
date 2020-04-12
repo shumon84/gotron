@@ -124,10 +124,10 @@ func (gbw *BrowserWindow) copyElectronApplication(forceInstall bool) (err error)
 		errz.Fatal(err)
 	}
 
-	err = os.Chmod(gbw.AppDirectory, gotronFileMode)
+	filepath.Walk(gbw.AppDirectory, file.ChmodWalkFunc(gotronFileMode))
 	errz.Fatal(err)
 	assetsDir := filepath.Join(gbw.AppDirectory, "assets")
-	err = os.Chmod(assetsDir, gotronFileMode)
+	filepath.Walk(assetsDir, file.ChmodWalkFunc(gotronFileMode))
 	errz.Fatal(err)
 
 	// If no UI folder is set use default ui files
