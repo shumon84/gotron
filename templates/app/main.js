@@ -1,4 +1,5 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow } = require('electron');
+const electron = require('electron');
 var WebSocketClient = require('websocket').client;
 const path = require('path');
 var client = new WebSocketClient();
@@ -23,6 +24,15 @@ function createWindow() {
   // Get BrowserWindow options from process arguments
   let opts = process.argv[3]
   opts = JSON.parse(opts)
+
+  const Screen = electron.screen;
+  const size = Screen.getPrimaryDisplay().size;
+  if (opts.width < 0) {
+    opts.width = size.width;
+  }
+  if ( opts.height < 0) {
+    opts.height = size.height;
+  }
 
   // Replace Preload Script
   opts.webPreferences.preload = path.resolve(`${__dirname}/preload.js`);
