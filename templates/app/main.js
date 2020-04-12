@@ -324,6 +324,7 @@ let eventMapArray = [
     let options = event.Data.Options;
     win.isVisibleOnAllWorkspaces(ignore, options);
   }],
+  ['setIgnoreMouseEvents', (event) => win.setIgnoreMouseEvents(event.Data.Ignore)],
   ['setContentProtection', (event) => win.setContentProtection(event.Data.Enable)],
   ['setFocusable', (event) => win.setFocusable(event.Data.Focusable)],
   ['setParentWindow', (event) => win.setParentWindow(event.Data.Parent)],
